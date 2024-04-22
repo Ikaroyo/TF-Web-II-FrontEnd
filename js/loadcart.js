@@ -10,7 +10,7 @@ window.onload = async function () {
     const response = await fetch("https://fakestoreapi.com/products");
     json = await response.json();
 
-    const discounts = await fetch("http://localhost:3000/getDiscount");
+    const discounts = await fetch("https://tf-web-ii-backend.onrender.com/getDiscount");
     discount = await discounts.json();
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
