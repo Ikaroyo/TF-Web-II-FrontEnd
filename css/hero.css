@@ -1,0 +1,217 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.light-theme .hero {
+  background-color: white;
+}
+
+.cards-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  height: 100%;
+  margin: 15px;
+}
+
+.light-theme .cards-hero {
+  background-color: rgb(255, 255, 255);
+}
+
+.big-card {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 15px solid #070707;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+.big-card:hover,
+.card-down:hover,
+.card-up:hover {
+  border: 15px solid #1d1d1d;
+}
+
+.light-theme .big-card,
+.light-theme .card-down,
+.light-theme .card-up {
+  border-color: #f0f0f0;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.light-theme .big-card:hover,
+.light-theme .card-down:hover,
+.light-theme .card-up:hover {
+  border: 15px solid #e0e0e0;
+}
+
+.big-card:hover .description-card {
+  transform: translateY(0);
+}
+
+.light-theme .cards-hero {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+.side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.card-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-up {
+  background-image: url(https://cdn.shopify.com/s/files/1/0026/6816/7234/products/Women_s-Small-Genuine-Leather-Backpack-Bag-Purse-Trendy-Backpacks-For-Women-Genuine-Leather_grande.jpg?v=1571719543);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  border: 15px solid #070707;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+.card-down {
+  background-image: url(https://i.pinimg.com/736x/ce/75/86/ce75865e5cabb8e9d05305a3953547f7.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  border: 15px solid #070707;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+.links-hero {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+.catalogo-cards {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.catalogo-cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.catalogo-cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-big-card,
+.title-card-up,
+.title-card-down {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.price-big-card,
+.price-card-up,
+.price-card-down {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 28px;
+  margin: 5px;
+  text-align: center;
+  font-style: italic;
+  font-family: "Roboto Mono", monospace;
+}
+
+.description-hidden {
+  display: none;
+}
+
+.description-card {
+  align-items: center;
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  transition: transform 0.5s;
+  transform: translateY(0%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.light-theme .price-big-card,
+.light-theme .price-card-up,
+.light-theme .price-card-down {
+  color: rgb(0, 0, 0);
+}

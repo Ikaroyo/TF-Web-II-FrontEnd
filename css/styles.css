@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Estilos para el tema oscuro */
+.dark-theme {
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background-color: rgb(0, 0, 0);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.dark-theme section h2 {
+  color: white;
+  background-color: transparent;
+}
+
+.dark-theme header {
+  color: white;
+}
+
+/* Estilos para el tema claro */
+.light-theme {
+  color: black;
+  background-color: white;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+}
+
+.light-theme section h2 {
+  color: black;
+}
+
+.light-theme header {
+  color: black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  max-width: 1200px;
+}
+
+section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  font-family: "Roboto Mono", monospace;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}

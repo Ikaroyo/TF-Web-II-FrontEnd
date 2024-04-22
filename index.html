@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Virtual</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/superbar.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/catalog.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="superbar" id="superbar">
+        <p>Bienvenido a nuestra tienda</p>
+        <div class="superelementos">
+          <a href="login.html">Logeate o registrate</a>
+          <button id="theme-toggle">
+            <lottie-player
+              src="img/dark.json"
+              background="transparent"
+              loop=""
+              speed="1"
+              onmouseover="this.play()"
+              onmouseout="this.stop()"
+            ></lottie-player>
+          </button>
+          <span class="divider"></span>
+          <div class="redes">
+            <a href="https://www.facebook.com">
+              <img
+                src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook--v1.png"
+                alt="facebook--v1"
+            /></a>
+            <a href="https://www.twitter.com">
+              <img
+                src="https://img.icons8.com/ios-filled/50/FFFFFF/twitter.png"
+                alt="twitter"
+              />
+            </a>
+            <a href="https://www.instagram.com">
+              <img
+                src="https://img.icons8.com/ios/50/FFFFFF/instagram-new--v1.png"
+                alt="instagram-new--v1"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <a href="#hero"
+          ><img
+            src="img/logo.png"
+            alt="Logo"
+            width="60"
+            height="60"
+            class="logo logo-img-header"
+        /></a>
+        <ul>
+          <li><a href="index.html#hero" class="nav-a">Inicio</a></li>
+          <li><a href="index.html#catalogo" class="nav-a">Catalogo</a></li>
+          <li><a href="index.html#descuentos" class="nav-a">Descuentos</a></li>
+          <li>
+            <a href="index.html#info-container" class="nav-a">Sobre Nosotros</a>
+          </li>
+          <li>
+            <a href="index.html#info-container" class="nav-a">Contacto</a>
+          </li>
+        </ul>
+
+        <div class="search-bar" id="searchbar">
+          <input
+            type="text"
+            placeholder="Buscar"
+            id="search-input"
+            autocomplete="off"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="cart" href="cart.html">
+          <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count"></span
+          ></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="hero" class="hero">
+        <h2>Nuevos lanzamientos</h2>
+        <div class="cards-hero"></div>
+      </section>
+
+      <section id="catalog" class="catalog">
+        <h2>Catalogo</h2>
+        <div class="catalog-cards" id="catalog-cards"></div>
+      </section>
+    </main>
+
+    <footer>
+      <section id="info-container" class="info-container">
+        <div class="footer-empresa">
+          <img class="logo-img-footer" src="img/logo.png" alt="Logo" />
+          <p>
+            <span id="footer-empresa-name">Store</span> <br />
+            <span
+              >Una empresa que se dedica a la venta de articulos varios desde
+              2022</span
+            >
+          </p>
+          <div class="redes-footer">
+            <a href="https://www.facebook.com">
+              <i class="fa fa-facebook" aria-hidden="true"></i
+            ></a>
+            <a href="https://www.twitter.com">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-news">
+          <h2>Ultimas noticias</h2>
+          <div class="news-card">
+            <div class="box-fecha">
+              <p class="dia">10</p>
+              <p class="mes">Oct</p>
+            </div>
+            <div class="box-noticia">
+              <p class="noticia">Noticia 1</p>
+              <p class="comentarios">0 Comentarios</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="box-fecha">
+              <p class="dia">07</p>
+              <p class="mes">Nov</p>
+            </div>
+            <div class="box-noticia">
+              <p class="noticia">Noticia 2</p>
+              <p class="comentarios">0 Comentarios</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="box-fecha">
+              <p class="dia">24</p>
+              <p class="mes">Dic</p>
+            </div>
+            <div class="box-noticia">
+              <p class="noticia">Noticia 3</p>
+              <p class="comentarios">0 Comentarios</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-info">
+          <h2>Informacion</h2>
+          <a href="#">FAQs</a>
+          <a href="#">Seguimiento de pedidos</a>
+          <a href="#">Devoluciones</a>
+          <a href="#">Contacto</a>
+          <a href="#">Politica de privacidad</a>
+        </div>
+        <div class="footer-subscribe">
+          <h2>Suscribete</h2>
+          <form id="footer-form">
+            <p>
+              Ingresa tu correo electronico para suscribirte a nuestro boletin
+              informativo y recibir promociones, novedades y mas.
+            </p>
+            <input
+              type="email"
+              placeholder="Ingresa tu correo electronico"
+              id="suscribe-email"
+              autocomplete="off"
+            />
+            <button id="suscribe-button">Suscribete</button>
+          </form>
+        </div>
+      </section>
+    </footer>
+
+    <div class="toast">
+      <p></p>
+    </div>
+
+    <div id="loader_container" class="loader_container">
+      <div id="loader" class="loader"></div>
+    </div>
+
+    <script src="js/hero.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/addtocart.js"></script>
+    <script src="js/toast.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8eceaa5955.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

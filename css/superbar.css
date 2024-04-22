@@ -1,0 +1,53 @@
+.superbar {
+    background-color: #111111;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.superelementos {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.redes {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.superelementos>a {
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.5s, padding 0.5s, border-radius 0.5s;
+}
+
+.superelementos>a:hover {
+    background-color: rgb(94, 94, 94);
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.5rem;
+}
+
+.divider {
+    width: 1px;
+    height: 1.5rem;
+    background-color: white;
+}
+
+.redes img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.redes a img {
+    transition: 0.5s;
+}
+
+.redes img:hover {
+    scale: 1.2;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+}

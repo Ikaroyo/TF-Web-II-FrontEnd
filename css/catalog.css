@@ -1,0 +1,231 @@
+/* Estilos compartidos */
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.catalog-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  justify-items: center;
+}
+
+.card-catalog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 90%;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-catalog img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.title-catalog-card {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card-catalog h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+}
+
+.description-catalog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  overflow: hidden;
+  text-align: center;
+  margin: 10px;
+}
+
+.add-cart-button {
+  bottom: 10px;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-cart-button:hover {
+  background-color: #00af58;
+  color: white;
+}
+
+.light-theme .add-cart-button {
+  background-color: #777777;
+  color: white;
+}
+
+.light-theme .add-cart-button:hover {
+  background-color: #08a356;
+  color: white;
+}
+
+.remove-cart-button,
+.light-theme .remove-cart-button {
+  background-color: #ff5a5a;
+  color: rgb(255, 255, 255);
+}
+
+.remove-cart-button:hover,
+.light-theme .remove-cart-button:hover {
+  background-color: #ff2e2e;
+  color: white;
+}
+
+.card-catalog p {
+  font-weight: bold;
+  font-size: 28px;
+  margin: 5px;
+}
+
+.final-price {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 5px;
+  text-align: center;
+  font-style: italic;
+  font-family: "Roboto Mono", monospace;
+}
+
+.discount-flag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 5px;
+  text-align: center;
+  font-style: italic;
+  font-family: "Roboto Mono", monospace;
+  background-color: #ff0000;
+  transform: rotate(-45deg);
+  transform-origin: 100% 100%;
+}
+
+.light-theme .discount-flag {
+  color: white;
+}
+
+.price-catalog-card-hero,
+.price-big-card,
+.price-card-up,
+.price-card-down {
+  background-color: #4d4d4da9;
+  width: 100%;
+}
+
+.description-catalog-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+  padding: 10px;
+  z-index: 1;
+  text-align: center;
+  font-style: italic;
+  font-family: "Roboto Mono", monospace;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description-catalog-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el tema oscuro */
+.dark-theme .catalog {
+  background-color: #333333;
+}
+
+.dark-theme .card-catalog {
+  background-color: #070707;
+}
+
+.dark-theme .card-catalog:hover {
+  background-color: #1d1d1d;
+}
+
+.dark-theme .description-catalog-card {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para el tema claro */
+.light-theme .catalog {
+  background-color: #ffffff;
+}
+
+.light-theme .card-catalog {
+  background-color: #f0f0f0;
+}
+
+.light-theme .card-catalog:hover {
+  background-color: #e0e0e0;
+}
+
+.light-theme .description-catalog-card {
+  border-color: #dddddd;
+}
+
+.price-catalog-card {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+
+.light-theme .rating i::before {
+  color: rgb(255, 187, 0);
+}
+
+.card-catalog ::-webkit-scrollbar {
+  width: 0;
+}
