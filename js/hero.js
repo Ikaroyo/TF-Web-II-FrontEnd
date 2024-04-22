@@ -6,7 +6,7 @@ window.onload = async function () {
   try {
     // Cargar los datos desde la API
     const response = await fetch("https://fakestoreapi.com/products");
-    const discountsResponse = await fetch("http://localhost:3000/getDiscount");
+    const discountsResponse = await fetch("https://tf-web-ii-backend.onrender.com/getDiscount");
 
     // Guardar los datos cargados en el objeto json
     json = await response.json();
