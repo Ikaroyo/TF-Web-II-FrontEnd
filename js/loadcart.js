@@ -10,7 +10,9 @@ window.onload = async function () {
     const response = await fetch("https://fakestoreapi.com/products");
     json = await response.json();
 
-    const discounts = await fetch("https://tf-web-ii-backend.onrender.com/getDiscount");
+    const discounts = await fetch(
+      "https://tf-web-ii-backend.onrender.com/getDiscount"
+    );
     discount = await discounts.json();
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -174,7 +176,7 @@ async function translateText(text) {
   try {
     const encodedText = encodeURIComponent(text);
     const response = await fetch(
-      `http://localhost:3000/translate?text=${encodedText}`
+      `https://tf-web-ii-backend.onrender.com/translate?text=${encodedText}`
     );
     const data = await response.json();
     if (data && data.translatedText) {
@@ -445,7 +447,7 @@ async function addEventListenerCheckout() {
       const queryString =
         "?data=" + encodeURIComponent(JSON.stringify(cartJson));
       const response = await fetch(
-        "http://localhost:3000/checkout" + queryString
+        "https://tf-web-ii-backend.onrender.com/checkout" + queryString
       );
       const data = await response.json();
       if (data && data.message) {
@@ -511,7 +513,7 @@ async function suscribeEmail() {
   const emailInput = document.getElementById("suscribe-email");
 
   const response = await fetch(
-    "http://localhost:3000/suscribe?email=" + emailInput.value
+    "https://tf-web-ii-backend.onrender.com/suscribe?email=" + emailInput.value
   );
   const responseData = await response.json();
 

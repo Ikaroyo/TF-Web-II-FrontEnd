@@ -6,7 +6,9 @@ window.onload = async function () {
   try {
     // Cargar los datos desde la API
     const response = await fetch("https://fakestoreapi.com/products");
-    const discountsResponse = await fetch("https://tf-web-ii-backend.onrender.com/getDiscount");
+    const discountsResponse = await fetch(
+      "https://tf-web-ii-backend.onrender.com/getDiscount"
+    );
 
     // Guardar los datos cargados en el objeto json
     json = await response.json();
@@ -59,8 +61,9 @@ async function translateText(text) {
   try {
     const encodedText = encodeURIComponent(text);
     const response = await fetch(
-      `http://localhost:3000/translate?text=${encodedText}`
+      `https://tf-web-ii-backend.onrender.com/translate?text=${encodedText}`
     );
+
     const data = await response.json();
     if (data && data.translatedText) {
       return data.translatedText;
@@ -380,7 +383,7 @@ async function suscribeEmail() {
   const emailInput = document.getElementById("suscribe-email");
 
   const response = await fetch(
-    "http://localhost:3000/suscribe?email=" + emailInput.value
+    "https://tf-web-ii-backend.onrender.com/suscribe?email=" + emailInput.value
   );
   const responseData = await response.json();
 
