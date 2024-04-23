@@ -20,7 +20,7 @@
       <div class="superbar" id="superbar">
         <p>Bienvenido a nuestra tienda</p>
         <div class="superelementos">
-          <a href="login.html">Logeate o registrate</a>
+          <a href="admin.html">Admin Panel</a>
           <button id="theme-toggle">
             <lottie-player
               src="img/dark.json"
@@ -65,7 +65,14 @@
         <ul>
           <li><a href="index.html#hero" class="nav-a">Inicio</a></li>
           <li><a href="index.html#catalog" class="nav-a">Catalogo</a></li>
-          <li><a href="index.html#descuentos" class="nav-a">Descuentos</a></li>
+          <li>
+            <a
+              href="index.html#catalog"
+              class="nav-a"
+              onclick="fillSearchInput()"
+              >Descuentos</a
+            >
+          </li>
           <li>
             <a href="index.html#info-container" class="nav-a">Sobre Nosotros</a>
           </li>
@@ -81,7 +88,17 @@
             id="search-input"
             autocomplete="off"
           />
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i
+            class="fa-solid fa-magnifying-glass"
+            id="search-icon"
+            onclick="searchProducts()"
+          ></i>
+          <i
+            class="fa-solid fa-xmark"
+            id="close-icon"
+            style="display: none"
+            onclick="cleanInputSearch()"
+          ></i>
         </div>
 
         <div class="cart" href="cart.html">

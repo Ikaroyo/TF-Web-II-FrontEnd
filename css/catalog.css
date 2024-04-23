@@ -116,7 +116,7 @@
 
 .final-price {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px;
   margin: 5px;
   text-align: center;
   font-style: italic;
@@ -212,7 +212,7 @@
 .price-catalog-card {
   font-family: "Roboto Mono", monospace;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
   margin: 10px;
   padding: 10px;

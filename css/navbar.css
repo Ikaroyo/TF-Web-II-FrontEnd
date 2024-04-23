@@ -253,3 +253,8 @@ lottie-player:hover {
     transform: rotate(360deg);
   }
 }
+
+#search-icon,
+#close-icon {
+  margin-right: 10px;
+}

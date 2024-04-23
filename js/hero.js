@@ -1,3 +1,4 @@
+let apiUrl = "http://localhost:3000";
 window.onload = async function () {
   // Mostrar el loader
   const loader = document.getElementById("loader_container");
@@ -6,9 +7,7 @@ window.onload = async function () {
   try {
     // Cargar los datos desde la API
     const response = await fetch("https://fakestoreapi.com/products");
-    const discountsResponse = await fetch(
-      "https://tf-web-ii-backend.onrender.com/getDiscount"
-    );
+    const discountsResponse = await fetch(apiUrl + "/getDiscount");
 
     // Guardar los datos cargados en el objeto json
     json = await response.json();
@@ -60,9 +59,7 @@ async function translateJSON(json) {
 async function translateText(text) {
   try {
     const encodedText = encodeURIComponent(text);
-    const response = await fetch(
-      `https://tf-web-ii-backend.onrender.com/translate?text=${encodedText}`
-    );
+    const response = await fetch(`${apiUrl}/translate?text=${encodedText}`);
 
     const data = await response.json();
     if (data && data.translatedText) {
@@ -85,6 +82,10 @@ function createNeededElements() {
   suscribeListener();
   addListenersToCatalogCards();
   theme();
+  if (window.location.hash === "#descuentos") {
+    // Llamar a fillSearchInput si el hash está presente
+    fillSearchInput();
+  }
 }
 
 function theme() {
@@ -109,6 +110,7 @@ function theme() {
   const searchBar = document.querySelector(".search-bar");
   const searchBarInput = document.querySelector(".search-bar input");
   const searchBarI = document.querySelector(".search-bar i");
+  const removeI = document.getElementById("close-icon");
   const cart = document.querySelector(".cart");
   const cartSpan = document.querySelector(".cart span");
   const navA = document.querySelectorAll("nav-a");
@@ -146,6 +148,7 @@ function theme() {
   searchBar.classList.add(startTheme);
   searchBarInput.classList.add(startTheme);
   searchBarI.classList.add(startTheme);
+  removeI.classList.add(startTheme);
   cart.classList.add(startTheme);
   cartSpan.classList.add(startTheme);
   footer.classList.add(startTheme);
@@ -173,6 +176,7 @@ function theme() {
     searchBar.classList.toggle("light-theme");
     searchBarInput.classList.toggle("light-theme");
     searchBarI.classList.toggle("light-theme");
+    removeI.classList.toggle("light-theme");
     cart.classList.toggle("light-theme");
     cartSpan.classList.toggle("light-theme");
     footer.classList.toggle("light-theme");
@@ -219,20 +223,30 @@ function addSearchListener() {
   searchInput.addEventListener("input", (e) => {
     const searchValue = removeDiacritics(e.target.value);
     const cards = document.querySelectorAll(".card-catalog");
-    // go to section #catalog
-
+    // Go to section #catalog
     const section = document.getElementById("catalog");
-
     section.scrollIntoView({ behavior: "smooth" });
-    cards.forEach((card) => {
-      const title = removeDiacritics(card.querySelector("h3").textContent);
-      if (title.toLowerCase().includes(searchValue.toLowerCase())) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    });
+    searchProducts(searchValue, cards);
   });
+}
+
+function checkInputSearch() {
+  const searchInput = document.getElementById("search-input");
+  const searchIcon = document.getElementById("search-icon");
+  const removeIcon = document.getElementById("close-icon");
+  if (searchInput.value != "") {
+    searchIcon.style.display = "none";
+    removeIcon.style.display = "block";
+  } else {
+    searchIcon.style.display = "block";
+    removeIcon.style.display = "none";
+  }
+}
+
+function cleanInputSearch() {
+  const searchInput = document.getElementById("search-input");
+  searchInput.value = "";
+  searchProducts();
 }
 
 // Función para eliminar tildes y diacríticos
@@ -249,6 +263,47 @@ function toggleDescription(card) {
     description.style.display = "flex";
   }
 }
+
+// funcion para filtrar los productos con descuento
+
+function fillSearchInput() {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) {
+    searchInput.value = "off";
+    searchProducts();
+  }
+}
+
+// funcion para buscar haciendo click en el icono con id="search-icon"
+function searchProducts() {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) {
+    const searchValue = removeDiacritics(
+      searchInput.value.trim().toLowerCase()
+    );
+    const cards = document.querySelectorAll(".card-catalog");
+    const section = document.getElementById("catalog");
+    section.scrollIntoView({ behavior: "smooth" });
+
+    cards.forEach((card) => {
+      const title = removeDiacritics(
+        card.querySelector("h3").textContent.trim().toLowerCase()
+      );
+      const flag = card.querySelector(".flag");
+      if (searchValue === "off" && flag) {
+        card.style.display = "flex";
+      } else {
+        if (title.includes(searchValue)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    });
+  }
+  checkInputSearch();
+}
+
 function addListenersToCards() {
   const bigCard = document.getElementById("big-card");
   const upCard = document.getElementById("card-up");
@@ -382,9 +437,7 @@ function suscribeListener() {
 async function suscribeEmail() {
   const emailInput = document.getElementById("suscribe-email");
 
-  const response = await fetch(
-    "https://tf-web-ii-backend.onrender.com/suscribe?email=" + emailInput.value
-  );
+  const response = await fetch(apiUrl + "/suscribe?email=" + emailInput.value);
   const responseData = await response.json();
 
   if (responseData.error) {
