@@ -1,6 +1,6 @@
 ## Enlace al Frontend
 Requisitos:
-- Tener index.js de Backend corriento
+- Tener index.js de Backend corriendo
 - Tener creadas las bases de datos en local seguir las instrucciones de README que se encuentra en el Backend
 
 
