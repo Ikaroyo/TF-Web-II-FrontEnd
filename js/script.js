@@ -223,7 +223,6 @@ function addSearchListener() {
   searchInput.addEventListener("input", (e) => {
     const searchValue = removeDiacritics(e.target.value);
     const cards = document.querySelectorAll(".card-catalog");
-    // Go to section #catalog
     const section = document.getElementById("catalog");
     section.scrollIntoView({ behavior: "smooth" });
     searchProducts(searchValue, cards);
@@ -274,7 +273,6 @@ function fillSearchInput() {
   }
 }
 
-// funcion para buscar haciendo click en el icono con id="search-icon"
 function searchProducts() {
   const searchInput = document.getElementById("search-input");
   if (searchInput) {
@@ -308,8 +306,6 @@ function addListenersToCards() {
   const bigCard = document.getElementById("big-card");
   const upCard = document.getElementById("card-up");
   const downCard = document.getElementById("card-down");
-
-  // add or remove class description-hidden when hover to the elemeent description-card inside of each card
 
   bigCard.addEventListener("click", (e) => {
     if (e.target.classList.contains("add-cart-button")) {
@@ -421,7 +417,7 @@ function createHero(json, discounts) {
   side.appendChild(upCard);
   side.appendChild(downCard);
 
-  cardsContainer.innerHTML = ""; // Limpiamos el contenedor antes de agregar las tarjetas
+  cardsContainer.innerHTML = "";
   cardsContainer.appendChild(bigCard);
   cardsContainer.appendChild(side);
 }

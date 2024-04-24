@@ -220,7 +220,7 @@ function displayCart(cart) {
 
     const card = document.createElement("div");
     card.classList.add("card-cart");
-    card.setAttribute("data-id", id); // Agregar atributo data-id con el id del producto
+    card.setAttribute("data-id", id);
 
     let finalPrice = product.price;
 
@@ -270,7 +270,6 @@ function displayCart(cart) {
 
     cartContainer.appendChild(card);
 
-    // Agregar línea horizontal entre elementos, pero no al final
     if (index < cart.length - 1) {
       const hr = document.createElement("hr");
       hr.classList.add("cart-hr");
@@ -281,7 +280,7 @@ function displayCart(cart) {
 
 function decreaseFromCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const index = cart.findIndex((item) => item[0].toString() === id.toString()); // Convertir a cadena y comparar
+  const index = cart.findIndex((item) => item[0].toString() === id.toString());
   if (index > -1) {
     if (cart[index][1] > 1) {
       cart[index][1]--;
@@ -299,12 +298,12 @@ function decreaseFromCart(id) {
 
 function increaseFromCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const index = cart.findIndex((item) => item[0].toString() === id.toString()); // Convertir a cadena y comparar
+  const index = cart.findIndex((item) => item[0].toString() === id.toString());
   if (index > -1) {
     cart[index][1]++;
     updateQuantity(id, cart[index][1]);
   } else {
-    cart.push([id.toString(), 1]); // Convertir a cadena al agregar al carrito
+    cart.push([id.toString(), 1]);
     updateQuantity(id, 1);
   }
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -371,19 +370,15 @@ function fixHr() {
   const allCards = document.querySelectorAll(".card-cart");
   const allHr = document.querySelectorAll(".cart-hr");
 
-  // Eliminar todas las líneas horizontales existentes
   allHr.forEach((hr) => {
     hr.remove();
   });
 
-  // Agregar una nueva línea horizontal entre cada tarjeta
   allCards.forEach((card, index) => {
     const hr = document.createElement("hr");
     hr.classList.add("cart-hr");
 
-    // Evitar agregar una línea horizontal después de la última tarjeta
     if (index !== allCards.length - 1) {
-      // Agregar la línea horizontal después de cada tarjeta
       card.after(hr);
     }
   });

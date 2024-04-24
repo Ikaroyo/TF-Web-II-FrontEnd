@@ -2,7 +2,7 @@
 
 const toast = document.querySelector(".toast");
 
-let toastTimeout; // Variable to store the timeout ID
+let toastTimeout;
 
 function showToast(message, type) {
   if (toastTimeout) {

@@ -69,22 +69,20 @@ function updateAddCatalogButton(id) {
   }
 }
 
-// function to check every button if it's in the cart
-
 function fixButtons() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let buttons = document.querySelectorAll(".add-cart-button");
 
   buttons.forEach((button) => {
-    const id = button.id.split("-")[3]; // Corregido el índice para obtener el ID correctamente
+    const id = button.id.split("-")[3];
     const index = cart.findIndex((item) => item[0] === id);
     if (index > -1) {
       button.textContent = "Remover del carrito";
       button.onclick = () => removeFromCart(id);
       button.classList.add("remove-cart-button");
     } else {
-      button.textContent = "Agregar al carrito"; // Cambia el texto si el elemento no está en el carrito
-      button.onclick = () => addToCart(id); // Cambia el evento click
+      button.textContent = "Agregar al carrito";
+      button.onclick = () => addToCart(id);
       button.classList.remove("remove-cart-button");
     }
   });
