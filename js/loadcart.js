@@ -446,6 +446,7 @@ async function addEventListenerCheckout() {
       const response = await fetch(apiUrl + "/checkout" + queryString);
       const data = await response.json();
       if (data && data.message) {
+        clearCart();
         showToast(data.message, "success");
       } else {
         showToast("Error al realizar el pedido", "error");
@@ -514,5 +515,15 @@ async function suscribeEmail() {
     showToast(responseData.error, "error");
   } else {
     showToast(responseData.message, "info");
+  }
+}
+
+function clearCart() {
+  localStorage.removeItem("cart");
+  refreshCart();
+  updateCheckout();
+  if (localStorage.getItem("cart") === null) {
+    const cartFill = document.getElementById("cart-fill");
+    cartFill.innerHTML = "";
   }
 }
